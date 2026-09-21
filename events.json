@@ -1,1 +1,50 @@
-[]
+[
+ {
+  "description": "主辦：Mattauw大地藝術季。帶領：小蟲子老師。費用：免費（Accupass報名，額滿為止）。報名截止：隨時（額滿截止）。地點：總爺藝文中心《曲流擺——流域饗宴》作品處。建議三歲至小六親子參加。",
+  "end": "2026-09-26T16:00:00+08:00",
+  "location": "總爺藝文中心, 台南市麻豆區南勢里總爺5號",
+  "start": "2026-09-26T15:00:00+08:00",
+  "title": "2026 Mattauw藝術季免費親子劇《誰來替河流說話》",
+  "url": "https://www.accupass.com/event/2608151427581072616995",
+  "id": "b660f54502fb",
+  "free": true,
+  "added": "2026-09-21",
+  "img": "https://static.accupass.com/eventbanner/2609020027261731175122.jpg"
+ },
+ {
+  "description": "主辦：樂麵屋。優惠：平日14:00-17:00兩人同行點任一碗拉麵，贈招牌日式炸雞乙份（價值118元，僅限內用）。優惠至10/31。另有入境九州拉麵之旅抽獎（9/18-10/31，點拉麵憑發票登錄抽日本九州來回機票等）。",
+  "end": "2026-09-25T17:00:00+08:00",
+  "location": "樂麵屋全台門市",
+  "start": "2026-09-25T14:00:00+08:00",
+  "title": "樂麵屋Happy Hour兩人同行點拉麵贈日式炸雞",
+  "url": "https://enews-life.com.tw/2026/09/644622/",
+  "id": "5428f8de07d1",
+  "free": false,
+  "added": "2026-09-21",
+  "img": "https://enews-life.com.tw/wp-content/uploads/2025/01/191a8e9ac1f04b7803ad2ae6f1d7b5b8-800x329.jpg"
+ },
+ {
+  "description": "主辦：NU PASTA × 食尚玩家。優惠：全台門市消費滿888元贈臺味炸品三拼盤乙份（價值239元，每帳號限兌乙組，限量1000份）。領券期間：9/21-10/11。兌換截止：11/15 12:00。",
+  "end": "2026-10-11T23:59:00+08:00",
+  "location": "NU PASTA全台門市",
+  "start": "2026-09-21T10:00:00+08:00",
+  "title": "NU PASTA消費滿888送臺味炸品三拼盤",
+  "url": "https://supertaste.tvbs.com.tw/offers/14265",
+  "id": "3391319cb16b",
+  "free": false,
+  "added": "2026-09-21",
+  "img": "https://supertaste-asset.tvbs.com.tw/legacy/img/program/upload/2026/09/17/1789578634_136e39ae67a2007330eb0b31c0bcc694.jpg"
+ },
+ {
+  "description": "主辦：漢堡王 Burger King。優惠：9/26當日10:30起，購買指定華堡套餐或大餐（輸碼LOVEBK或出示貼文）送原味小華堡乙顆（可累贈）。9/22-9/25官網預訂9/26取餐加碼抽華堡兌換券（20名，9/29抽出）。豪點王會員另贈聯名貼圖。",
+  "end": "2026-09-26T21:00:00+08:00",
+  "location": "漢堡王全門市",
+  "start": "2026-09-26T10:30:00+08:00",
+  "title": "漢堡王9月華堡日買指定套餐送原味小華堡",
+  "url": "https://eventgo.tw/event/48dcccaf-dc09-4c74-bbc7-fc58406263bf",
+  "id": "046dbe2e0919",
+  "free": false,
+  "added": "2026-09-21",
+  "img": "https://burgerkingimage.azureedge.net/seina/goshopping8-3-520000/pica-l/1a8b0fde-c1d6-40e1-8086-5542ea9440e3.png"
+ }
+]
