@@ -13,6 +13,8 @@
 <div id="count"></div><div id="list"></div>
 <script>
 let EV=[];
+let MAXADDED="";
+function isNewEv(e){try{if(!e||!e.added||!MAXADDED)return false;const a=new Date(e.added+"T00:00:00+08:00").getTime(),m=new Date(MAXADDED+"T00:00:00+08:00").getTime();if(isNaN(a)||isNaN(m))return false;return (m-a)/86400000<=7;}catch(_){return false;}}
 const PAGE_CONF={"locmode":"cheap","locopts":["","不限地區","線上","限台南"],"cats":{"食":["餐廳|美食|試吃|小吃|咖啡|飲料|便當|buffet|吃到飽|食品|麵|飯|漢堡|披薩|速食|餐|牛排|火鍋|燒肉|甜點|麵包|拉麵|壽司|餐券|吃|喝|餐飲|超市|量販|全聯|好市多|麥當勞|肯德基|星巴克|手搖|夜市|市場|PASTA|pizza|PIZZA|炸|義大利|焗|燴|簡餐|排餐|套餐|定食|丼|滷|鹽酥雞|雞排|珍奶|手搖飲"],"衣":["服飾|服裝|百貨|鞋|包|成衣|快時尚|UNIQLO|NET|GU|H&M|ZARA|衣服|褲|外套|內衣"],"住":["飯店|民宿|旅館|住宿|租屋|訂房|Agoda|Booking"],"行":["高鐵|台鐵|客運|租車|加油|停車|機票|航空|捷運|公車|計程車|Uber| Gogoro|機車|汽車"],"育":["課程|書籍|書店|文具|補習|學習|教育|線上課|Hahow|PressPlay"],"樂":["電影|影城|遊樂園|KTV|展覽|演唱會|運動|健身|遊戲|樂園|威秀|秀泰|門票|景點"]}};
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function siteId(){try{return (location.pathname||"/").split("/").filter(Boolean)[0]||"main";}catch(e){return "main";}}
@@ -45,6 +47,7 @@ var exp=isExpired(e);var done=getAdded().indexOf(e.id)>=0;
 var h='<div class="card'+(exp?" expired":"")+(done&&!exp?" done":"")+'"><div class="txt"><div class="meta">'+dt+'\uff5c'+esc(e.location||"");
 h+='<span class="tag '+(e.free?"free":"paid")+'">'+(e.free?"\u514d\u8cbb":"\u4ed8\u8cbb")+'</span><span class="tag loc">'+confLocCat(e.location)+'</span>'+dlBadge(e);
 (()=>{const cb=catOf(e);if(cb)h+='<span class="tag loc">'+esc(cb)+'</span>';})();
+if(isNewEv(e)){h+='<span class="badge-new">NEW</span>';}
 if(done&&!exp){h+='<span class="badge-done">\u5df2\u52a0\u5165\u2713</span>';}
 if(exp){h+='<span class="tag loc">\u5df2\u7d50\u675f</span>';}
 h+='</div><div class="t">'+(e.url?'<a style="color:inherit;text-decoration:none;" href="'+esc(e.url)+'" target="_blank" rel="noopener">'+esc(e.title)+'</a>':esc(e.title))+'</div><div class="d">'+esc(e.description||"")+'</div>';
@@ -57,6 +60,8 @@ let r=EV.filter(e=>{e=e||{};if(q&&(((e.title||"")+(e.description||"")+(e.locatio
 r.sort((a,b)=>String(a.start||"").localeCompare(String(b.start||"")));
 if(sort==="new")r.sort((a,b)=>String(b.added||"").localeCompare(String(a.added||"")));
 document.getElementById("count").textContent="\u5171 "+r.length+" \u5834\uff08\u7e3d\u5eab "+EV.length+" \u5834\uff09";
+try{var mx="";for(const e of EV){const a=(e&&e.added)||"";if(a&&a>mx)mx=a;}document.getElementById("fresh").textContent="\u8cc7\u6599\u66f4\u65b0\uff1a"+(mx||"—")+"\uff5c\u5171 "+EV.length+" \u5834";}catch(_){}
+MAXADDED=(()=>{try{let m="";for(const e of EV){const a=(e&&e.added)||"";if(a&&a>m)m=a;}return m;}catch(_){return "";}})();
 try{var mx="";for(const e of EV){const a=(e&&e.added)||"";if(a&&a>mx)mx=a;}document.getElementById("fresh").textContent="\u8cc7\u6599\u66f4\u65b0\uff1a"+(mx||"—")+"\uff5c\u5171 "+EV.length+" \u5834";}catch(_){}
 var act=r.filter(function(e){return !isExpired(e);});var old=r.filter(function(e){return isExpired(e);});
 var h=act.map(cardHtml).join("")||"<p>\u6c92\u6709\u7b26\u5408\u7684\u5834\u6b21\u3002</p>";
